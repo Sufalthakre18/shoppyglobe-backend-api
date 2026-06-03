@@ -9,7 +9,8 @@ import connectDB from "./config/db.js";
 
 // Import routes
 import authRoutes from "./routes/authRoutes.js";
-
+import productRoutes from "./routes/productRoutes.js";
+import cartRoutes from "./routes/cartRoutes.js";
 
 dotenv.config();
 
@@ -22,9 +23,10 @@ connectDB();
 app.use(express.json()); // Parse JSON request bodies
 app.use(express.urlencoded({ extended: false })); // Parse URL-encoded bodies
 
-
 // ─── Routes ───────────────────────────────────────────────────────────────────
 app.use("/", authRoutes);
+app.use("/products", productRoutes);
+app.use("/cart", cartRoutes);
 
 // ─── Root / Health Check ─────────────────────────────────────────────────────
 app.get("/", (req, res) => {
