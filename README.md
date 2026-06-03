@@ -6,6 +6,9 @@
 
 ---
 
+## Github link
+https://github.com/Sufalthakre18/shoppyglobe-backend-api
+
 ---
 
 ## 🛠️ Tech Stack
