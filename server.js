@@ -7,7 +7,10 @@ import dotenv from "dotenv";
 import express from "express";
 import connectDB from "./config/db.js";
 
-// Imp
+// Import routes
+import authRoutes from "./routes/authRoutes.js";
+
+
 dotenv.config();
 
 const app = express();
@@ -19,6 +22,9 @@ connectDB();
 app.use(express.json()); // Parse JSON request bodies
 app.use(express.urlencoded({ extended: false })); // Parse URL-encoded bodies
 
+
+// ─── Routes ───────────────────────────────────────────────────────────────────
+app.use("/", authRoutes);
 
 // ─── Root / Health Check ─────────────────────────────────────────────────────
 app.get("/", (req, res) => {
